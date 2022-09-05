@@ -5,6 +5,8 @@ SELECT * FROM rental;
 
 SELECT * FROM film;
 
+SELECT * FROM film_actor;
+
 SELECT * FROM inventory;
 
 SELECT * FROM customer;
@@ -14,6 +16,8 @@ SELECT * FROM staff;
 SELECT * FROM address;
 
 SELECT * FROM payment;
+
+SELECT * FROM actor;
 
 # CREACION DE VISTA RENT FILMS - SUB CONSULTA INNER JOIN
 CREATE VIEW RentFilms AS
@@ -58,6 +62,9 @@ INNER JOIN address A ON (A.address_id = C.address_id);
 # SUBQUERY
 SELECT 
 	(SELECT F.title FROM film F WHERE F.film_id = (SELECT I.film_id FROM inventory I WHERE I.inventory_id = R.inventory_id)) "Film Title",
+    (SELECT F.description FROM film F WHERE F.film_id = (SELECT I.film_id FROM inventory I WHERE I.inventory_id = R.inventory_id)) "Film Description",
+    (SELECT F.release_year FROM film F WHERE F.film_id = (SELECT I.film_id FROM inventory I WHERE I.inventory_id = R.inventory_id)) "Release Year",
+    concat(Ac.first_name, ' ', Ac.last_name) as "Actor",
 	R.rental_date as "Rental Date",
     R.return_date as "Return Date",
     (SELECT concat(C.first_name, ' ', C.last_name) FROM customer C WHERE C.customer_id = R.customer_id) "Client",
@@ -68,6 +75,9 @@ SELECT
     P.staff_id "Code Seller - Payment",
     R.staff_id "Code Seller - Rent"
 FROM rental R,
-	payment P
+	payment P,
+    film_actor Fa
+INNER JOIN actor Ac ON (Ac.actor_id = Fa.actor_id)
+INNER JOIN film F ON (F.film_id = Fa.film_id)
     WHERE R.rental_id = P.rental_id;
 
