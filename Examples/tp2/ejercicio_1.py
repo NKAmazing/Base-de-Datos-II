@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 
 # Leer Csv
-df = pd.read_csv(r'sponge.data', delimiter = ",")
+df = pd.read_csv(r'data/sponge.data', delimiter = ",")
 
 print(df)
 
