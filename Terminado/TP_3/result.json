@@ -1,0 +1,494 @@
+{
+ "name": "Base de datos II 2022",
+ "type": "private_group",
+ "id": 487588276,
+ "messages": [
+  {
+   "id": 1181,
+   "type": "message",
+   "date": "2022-08-29T18:57:53",
+   "date_unixtime": "1661810273",
+   "from": "Gabriel Arenas 🇦🇷",
+   "from_id": "user192620519",
+   "text": "Consulta para extraer datos con subqueries",
+   "text_entities": [
+    {
+     "type": "plain",
+     "text": "Consulta para extraer datos con subqueries"
+    }
+   ]
+  },
+  {
+   "id": 1182,
+   "type": "message",
+   "date": "2022-08-29T18:58:03",
+   "date_unixtime": "1661810283",
+   "from": "Gabriel Arenas 🇦🇷",
+   "from_id": "user192620519",
+   "text": [
+    "SELECT re.rental_id  \"CODIGORENTA\",\n       re.rental_date \"FECHARENTA\",\n       year(re.rental_date) \"AÑORENTA\",\n       month(re.rental_date) \"MESRENTA\",\n       quarter(re.rental_date) \"CUATRIRENTA\",\n       re.inventory_id,\n       re.customer_id,\n       (select concat(cu.first_name,' ',cu.last_name) from customer cu where cu.customer_id = re.customer_id  ) \"CLIENTE\",\n       (select cu.active from customer cu where cu.customer_id = re.customer_id  ) \"ACTIVO\", \n       (select ",
+    {
+     "type": "link",
+     "text": "cu.email"
+    },
+    " from customer cu where cu.customer_id = re.customer_id  ) \"EMAIL\",\n       ( select concat(ad.address,' - ',ad.district) from address ad where ad.address_id = (select cu.address_id from customer cu where cu.customer_id = re.customer_id  ) ) \"DOMICILIO\",\n       re.return_date,\n       re.staff_id \"CODVEND-RENTA\",\n       re.last_update,\n       pa.payment_id,\n       pa.staff_id \"CODVEND-COBRA\",\n       pa.amount,\n       pa.payment_date,\n       1 \"CUENTA\"\nFROM rental re,\n   payment pa\nwhere re.rental_id = pa.rental_id;"
+   ],
+   "text_entities": [
+    {
+     "type": "plain",
+     "text": "SELECT re.rental_id  \"CODIGORENTA\",\n       re.rental_date \"FECHARENTA\",\n       year(re.rental_date) \"AÑORENTA\",\n       month(re.rental_date) \"MESRENTA\",\n       quarter(re.rental_date) \"CUATRIRENTA\",\n       re.inventory_id,\n       re.customer_id,\n       (select concat(cu.first_name,' ',cu.last_name) from customer cu where cu.customer_id = re.customer_id  ) \"CLIENTE\",\n       (select cu.active from customer cu where cu.customer_id = re.customer_id  ) \"ACTIVO\", \n       (select "
+    },
+    {
+     "type": "link",
+     "text": "cu.email"
+    },
+    {
+     "type": "plain",
+     "text": " from customer cu where cu.customer_id = re.customer_id  ) \"EMAIL\",\n       ( select concat(ad.address,' - ',ad.district) from address ad where ad.address_id = (select cu.address_id from customer cu where cu.customer_id = re.customer_id  ) ) \"DOMICILIO\",\n       re.return_date,\n       re.staff_id \"CODVEND-RENTA\",\n       re.last_update,\n       pa.payment_id,\n       pa.staff_id \"CODVEND-COBRA\",\n       pa.amount,\n       pa.payment_date,\n       1 \"CUENTA\"\nFROM rental re,\n   payment pa\nwhere re.rental_id = pa.rental_id;"
+    }
+   ]
+  },
+  {
+   "id": 1183,
+   "type": "message",
+   "date": "2022-09-05T17:20:50",
+   "date_unixtime": "1662409250",
+   "from": "Gabriel Arenas 🇦🇷",
+   "from_id": "user192620519",
+   "file": "(File not included. Change data exporting settings to download.)",
+   "mime_type": "text/csv",
+   "text": "",
+   "text_entities": []
+  },
+  {
+   "id": 1184,
+   "type": "message",
+   "date": "2022-09-05T17:20:50",
+   "date_unixtime": "1662409250",
+   "from": "Gabriel Arenas 🇦🇷",
+   "from_id": "user192620519",
+   "file": "(File not included. Change data exporting settings to download.)",
+   "mime_type": "application/vnd.ms-excel",
+   "text": "",
+   "text_entities": []
+  },
+  {
+   "id": 1185,
+   "type": "message",
+   "date": "2022-09-05T19:12:06",
+   "date_unixtime": "1662415926",
+   "from": "Gabriel Arenas 🇦🇷",
+   "from_id": "user192620519",
+   "photo": "(File not included. Change data exporting settings to download.)",
+   "width": 1060,
+   "height": 1060,
+   "text": "Foto de Gabriel Arenas",
+   "text_entities": [
+    {
+     "type": "plain",
+     "text": "Foto de Gabriel Arenas"
+    }
+   ]
+  },
+  {
+   "id": 1186,
+   "type": "message",
+   "date": "2022-09-08T13:33:13",
+   "date_unixtime": "1662654793",
+   "from": "Gabriel Arenas 🇦🇷",
+   "from_id": "user192620519",
+   "text": [
+    "OPEN WEEK UM\nLa Facultad de Ingeniería de la Sede San Rafael los invita a participar de la 2° edición del “OPEN WEEK UM”, esta edición tiene como objeto \"promover el diálogo, propiciar la reflexión y la producción de saberes en forma conjunta, fomentando la transferencia tecnológica y atendiendo a las demandas, intereses y necesidades del medio sanrafaelino\".\n\nEn esta oportunidad nos acompañarán distintas empresas privadas del medio e instituciones públicas.  \n🗓 13, 14 y 15 de septiembre\n🕝19:00 h (Arg.)\n👧👨Destinado a estudiantes y profesores de la UM y público en general\n🆓 Acceso libre y gratuito.\n🏢 Modalidad Presencial. Aula Magna de la Universidad de Mendoza – Sede San Rafael\n\n📫Consultas e informes: ",
+    {
+     "type": "email",
+     "text": "facultad.ingenieriassr@um.edu.ar"
+    },
+    ""
+   ],
+   "text_entities": [
+    {
+     "type": "plain",
+     "text": "OPEN WEEK UM\nLa Facultad de Ingeniería de la Sede San Rafael los invita a participar de la 2° edición del “OPEN WEEK UM”, esta edición tiene como objeto \"promover el diálogo, propiciar la reflexión y la producción de saberes en forma conjunta, fomentando la transferencia tecnológica y atendiendo a las demandas, intereses y necesidades del medio sanrafaelino\".\n\nEn esta oportunidad nos acompañarán distintas empresas privadas del medio e instituciones públicas.  \n🗓 13, 14 y 15 de septiembre\n🕝19:00 h (Arg.)\n👧👨Destinado a estudiantes y profesores de la UM y público en general\n🆓 Acceso libre y gratuito.\n🏢 Modalidad Presencial. Aula Magna de la Universidad de Mendoza – Sede San Rafael\n\n📫Consultas e informes: "
+    },
+    {
+     "type": "email",
+     "text": "facultad.ingenieriassr@um.edu.ar"
+    },
+    {
+     "type": "plain",
+     "text": ""
+    }
+   ]
+  },
+  {
+   "id": 1187,
+   "type": "message",
+   "date": "2022-09-12T16:22:22",
+   "date_unixtime": "1663010542",
+   "from": "Gabriel Arenas 🇦🇷",
+   "from_id": "user192620519",
+   "text": "Estimados,  no voy a ir esta tarde,  estoy descompuesto. Les dejo ejercicios en la cátedra virtual.",
+   "text_entities": [
+    {
+     "type": "plain",
+     "text": "Estimados,  no voy a ir esta tarde,  estoy descompuesto. Les dejo ejercicios en la cátedra virtual."
+    }
+   ]
+  },
+  {
+   "id": 1188,
+   "type": "message",
+   "date": "2022-09-12T16:23:05",
+   "date_unixtime": "1663010585",
+   "from": "Gabriel Arenas 🇦🇷",
+   "from_id": "user192620519",
+   "text": "Les indico más tarde el título",
+   "text_entities": [
+    {
+     "type": "plain",
+     "text": "Les indico más tarde el título"
+    }
+   ]
+  },
+  {
+   "id": 1189,
+   "type": "message",
+   "date": "2022-09-12T16:25:58",
+   "date_unixtime": "1663010758",
+   "from": "Douglas",
+   "from_id": "user956019236",
+   "text": "Bueno profe, que se mejore!",
+   "text_entities": [
+    {
+     "type": "plain",
+     "text": "Bueno profe, que se mejore!"
+    }
+   ]
+  },
+  {
+   "id": 1190,
+   "type": "message",
+   "date": "2022-09-12T17:16:42",
+   "date_unixtime": "1663013802",
+   "from": "Ramiro Alberto Giandinoto",
+   "from_id": "user261745196",
+   "text": "Gracias Profe",
+   "text_entities": [
+    {
+     "type": "plain",
+     "text": "Gracias Profe"
+    }
+   ]
+  },
+  {
+   "id": 1191,
+   "type": "service",
+   "date": "2022-09-12T17:18:19",
+   "date_unixtime": "1663013899",
+   "actor": "Alexis",
+   "actor_id": "user1688443825",
+   "action": "invite_members",
+   "members": [
+    "Nicolás Mayoral"
+   ],
+   "text": "",
+   "text_entities": []
+  },
+  {
+   "id": 1192,
+   "type": "message",
+   "date": "2022-09-12T17:19:08",
+   "date_unixtime": "1663013948",
+   "from": "Ramiro Alberto Giandinoto",
+   "from_id": "user261745196",
+   "text": "Que se mejore pronto. Un abrazo",
+   "text_entities": [
+    {
+     "type": "plain",
+     "text": "Que se mejore pronto. Un abrazo"
+    }
+   ]
+  },
+  {
+   "id": 1193,
+   "type": "message",
+   "date": "2022-09-12T17:27:37",
+   "date_unixtime": "1663014457",
+   "from": "jose ruti",
+   "from_id": "user1274646303",
+   "text": "Dele profe, que se mejore pronto !!",
+   "text_entities": [
+    {
+     "type": "plain",
+     "text": "Dele profe, que se mejore pronto !!"
+    }
+   ]
+  },
+  {
+   "id": 1194,
+   "type": "message",
+   "date": "2022-09-12T17:27:55",
+   "date_unixtime": "1663014475",
+   "from": "Nicolás Mayoral",
+   "from_id": "user1531770772",
+   "text": "Que se mejore profe!",
+   "text_entities": [
+    {
+     "type": "plain",
+     "text": "Que se mejore profe!"
+    }
+   ]
+  },
+  {
+   "id": 1258,
+   "type": "message",
+   "date": "2022-10-17T11:13:03",
+   "date_unixtime": "1666015983",
+   "from": "Gabriel Arenas 🇦🇷",
+   "from_id": "user192620519",
+   "text": "Estimados alumnos,  esta tarde nos reunimos vía meet;  estoy congestionado y no voy a poder asistir presencial,  en unos minutos les paso el link",
+   "text_entities": [
+    {
+     "type": "plain",
+     "text": "Estimados alumnos,  esta tarde nos reunimos vía meet;  estoy congestionado y no voy a poder asistir presencial,  en unos minutos les paso el link"
+    }
+   ]
+  },
+  {
+   "id": 1259,
+   "type": "service",
+   "date": "2022-10-17T11:33:34",
+   "date_unixtime": "1666017214",
+   "actor": "Gabriel Arenas 🇦🇷",
+   "actor_id": "user192620519",
+   "action": "edit_group_photo",
+   "photo": "(File not included. Change data exporting settings to download.)",
+   "width": 640,
+   "height": 640,
+   "text": "",
+   "text_entities": []
+  },
+  {
+   "id": 1260,
+   "type": "message",
+   "date": "2022-10-17T11:34:20",
+   "date_unixtime": "1666017260",
+   "from": "jose ruti",
+   "from_id": "user1274646303",
+   "reply_to_message_id": 1258,
+   "text": "Okey profe, perfecto !!",
+   "text_entities": [
+    {
+     "type": "plain",
+     "text": "Okey profe, perfecto !!"
+    }
+   ]
+  },
+  {
+   "id": 1261,
+   "type": "message",
+   "date": "2022-10-17T11:46:38",
+   "date_unixtime": "1666017998",
+   "from": "Ramiro Alberto Giandinoto",
+   "from_id": "user261745196",
+   "text": "Ok",
+   "text_entities": [
+    {
+     "type": "plain",
+     "text": "Ok"
+    }
+   ]
+  },
+  {
+   "id": 1262,
+   "type": "message",
+   "date": "2022-10-17T11:48:55",
+   "date_unixtime": "1666018135",
+   "from": "Nicolás Mayoral",
+   "from_id": "user1531770772",
+   "reply_to_message_id": 1258,
+   "text": "Bueno profe!",
+   "text_entities": [
+    {
+     "type": "plain",
+     "text": "Bueno profe!"
+    }
+   ]
+  },
+  {
+   "id": 1263,
+   "type": "message",
+   "date": "2022-10-17T12:06:55",
+   "date_unixtime": "1666019215",
+   "from": "Gabriel Arenas 🇦🇷",
+   "from_id": "user192620519",
+   "text": [
+    "Reunion Virtual Diseño Base Datos II - 17-10-22\nLunes, 17 de octubre · 4:30 – 8:00pm\nInformación para unirse a Google Meet\nEnlace a la videollamada: ",
+    {
+     "type": "link",
+     "text": "https://meet.google.com/zzp-jzxo-hcg"
+    },
+    "\nO marca el:  (US) +1 ",
+    {
+     "type": "phone",
+     "text": "727-314-2996"
+    },
+    "  PIN:  388 881 034 #"
+   ],
+   "text_entities": [
+    {
+     "type": "plain",
+     "text": "Reunion Virtual Diseño Base Datos II - 17-10-22\nLunes, 17 de octubre · 4:30 – 8:00pm\nInformación para unirse a Google Meet\nEnlace a la videollamada: "
+    },
+    {
+     "type": "link",
+     "text": "https://meet.google.com/zzp-jzxo-hcg"
+    },
+    {
+     "type": "plain",
+     "text": "\nO marca el:  (US) +1 "
+    },
+    {
+     "type": "phone",
+     "text": "727-314-2996"
+    },
+    {
+     "type": "plain",
+     "text": "  PIN:  388 881 034 #"
+    }
+   ]
+  },
+  {
+   "id": 1266,
+   "type": "message",
+   "date": "2022-10-17T18:37:18",
+   "date_unixtime": "1666042638",
+   "from": "Gabriel Arenas 🇦🇷",
+   "from_id": "user192620519",
+   "text": "chicos me demoro unos minutos en volver,  tengo que rescatar a mi esposa del colegio,  19 hs  estoy de vuelta",
+   "text_entities": [
+    {
+     "type": "plain",
+     "text": "chicos me demoro unos minutos en volver,  tengo que rescatar a mi esposa del colegio,  19 hs  estoy de vuelta"
+    }
+   ]
+  },
+  {
+   "id": 1267,
+   "type": "message",
+   "date": "2022-10-17T18:59:45",
+   "date_unixtime": "1666043985",
+   "from": "Gabriel Arenas 🇦🇷",
+   "from_id": "user192620519",
+   "text": "estoy de vuelta",
+   "text_entities": [
+    {
+     "type": "plain",
+     "text": "estoy de vuelta"
+    }
+   ]
+  },
+  {
+   "id": 1314,
+   "type": "message",
+   "date": "2022-10-31T15:01:34",
+   "date_unixtime": "1667239294",
+   "from": "Gabriel Arenas 🇦🇷",
+   "from_id": "user192620519",
+   "text": "Buenas tardes chicos,  nos vemos esta tarde en la Facu 16:30 hs",
+   "text_entities": [
+    {
+     "type": "plain",
+     "text": "Buenas tardes chicos,  nos vemos esta tarde en la Facu 16:30 hs"
+    }
+   ]
+  },
+  {
+   "id": 1315,
+   "type": "message",
+   "date": "2022-10-31T18:16:25",
+   "date_unixtime": "1667250985",
+   "from": "Gabriel Arenas 🇦🇷",
+   "from_id": "user192620519",
+   "file": "(File not included. Change data exporting settings to download.)",
+   "thumbnail": "(File not included. Change data exporting settings to download.)",
+   "mime_type": "application/pdf",
+   "text": "",
+   "text_entities": []
+  },
+  {
+   "id": 1368,
+   "type": "service",
+   "date": "2022-11-07T16:39:38",
+   "date_unixtime": "1667849978",
+   "actor": "Enzo Fernandez",
+   "actor_id": "user1726569146",
+   "action": "invite_members",
+   "members": [
+    "Marcos Miglierina"
+   ],
+   "text": "",
+   "text_entities": []
+  },
+  {
+   "id": 1391,
+   "type": "message",
+   "date": "2022-11-10T10:33:36",
+   "date_unixtime": "1668087216",
+   "from": "Marcos Miglierina",
+   "from_id": "user5107941451",
+   "text": "Buenos días profe! Como está? Le hago una consulta, el trabajo integrador, informe y el trabajo en Kibana es en grupo o individual?",
+   "text_entities": [
+    {
+     "type": "plain",
+     "text": "Buenos días profe! Como está? Le hago una consulta, el trabajo integrador, informe y el trabajo en Kibana es en grupo o individual?"
+    }
+   ]
+  },
+  {
+   "id": 1392,
+   "type": "message",
+   "date": "2022-11-10T10:56:01",
+   "date_unixtime": "1668088561",
+   "from": "Gabriel Arenas 🇦🇷",
+   "from_id": "user192620519",
+   "reply_to_message_id": 1391,
+   "text": "Marcos,  se pueden presentar en forma individual,  o en grupo de no más de 4 integrantes.  Para el de Kibana les recomiendo que usen un dataset de Kaggle,  busquen un csv, sqlite o zip que tenga unos 20k registros al menos como para que tenga info para analizar.\nCualquier duda,  me consultan",
+   "text_entities": [
+    {
+     "type": "plain",
+     "text": "Marcos,  se pueden presentar en forma individual,  o en grupo de no más de 4 integrantes.  Para el de Kibana les recomiendo que usen un dataset de Kaggle,  busquen un csv, sqlite o zip que tenga unos 20k registros al menos como para que tenga info para analizar.\nCualquier duda,  me consultan"
+    }
+   ]
+  },
+  {
+   "id": 1393,
+   "type": "message",
+   "date": "2022-11-10T10:57:25",
+   "date_unixtime": "1668088645",
+   "from": "Marcos Miglierina",
+   "from_id": "user5107941451",
+   "text": "Genial, gracias profe!",
+   "text_entities": [
+    {
+     "type": "plain",
+     "text": "Genial, gracias profe!"
+    }
+   ]
+  },
+  {
+   "id": 1398,
+   "type": "service",
+   "date": "2022-11-12T14:51:10",
+   "date_unixtime": "1668275470",
+   "actor": "Douglas",
+   "actor_id": "user956019236",
+   "action": "invite_members",
+   "members": [
+    "Gaston Fenske"
+   ],
+   "text": "",
+   "text_entities": []
+  }
+ ]
+}
