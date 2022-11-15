@@ -7,8 +7,9 @@ import matplotlib.pyplot as plt
 # inline hace que muestre los graficos en el notebook, sino se crearía un archivo aparte
 import seaborn as sns
 
+path = r"C:\Users\Nicolas\Proyectos Programacion\Base-de-Datos-II\base-de-datos-ii\data\echocardiogram.data"
 # Leer y obtener el dataset
-df2 = pd.read_csv('data/echocardiogram.data', delimiter=",", header=None)
+df2 = pd.read_csv(path, delimiter=",", header=None, error_bad_lines=False)
 df2.columns = ["survival","still-alive","age-at-heart-attack","pericardial-effusion","fractional-shortening","epss","lvdd","wall-motion-score","wall-motion-index","mult","name","group","alive-at-1"]
 print(df2)
 

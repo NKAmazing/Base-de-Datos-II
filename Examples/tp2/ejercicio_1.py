@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 
 # Leer Csv
-df = pd.read_csv(r'data/sponge.data', delimiter = ",")
+df = pd.read_csv(r"C:\Users\Nicolas\Proyectos Programacion\Base-de-Datos-II\base-de-datos-ii\data\sponge.data", delimiter = ",")
 
 print(df)
 
@@ -38,3 +38,5 @@ print(faltantes_df)
 # agrupamos los datos faltantes que tenga porcentaje mayor a 0
 missing_df = faltantes_df.loc[faltantes_df["percentage"] > 0]
 print(missing_df)
+
+sns.heatmap(df.isin(['?']), cbar=False)
